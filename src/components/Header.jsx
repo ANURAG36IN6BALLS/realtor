@@ -1,6 +1,19 @@
 import React from 'react'
+import { useLocation,useNavigate } from 'react-router'
+
+
 
 export default function Header() {
+    const location = useLocation()
+    const navigate = useNavigate()
+
+   function matchroute(route){
+    if ( route==location.pathname){
+        return true
+    }
+   }
+
+    
   return (
     <div className='bg-white border-b-2 shadow-sm sticky top-0 z-50'>
 
@@ -8,14 +21,38 @@ export default function Header() {
             <div>
 
 
-                <img src="https://static.rdc.moveaws.com/images/logos/rdc-logo-default.svg" alt="Realter logo" className='h-5' />
+                <img src="https://static.rdc.moveaws.com/images/logos/rdc-logo-default.svg" alt="Realter logo" className='h-5 cursor-pointer'
+                onclick={()=>navigate('/')}
+                />
 
             </div>
             <div>
                 <ul className='flex space-x-6'>
-                    <li className='py-3 text-slate-500 text-sm font-semibold'>Home</li>
-                    <li className='py-3 text-slate-500 text-sm font-semibold'>Offers</li>
-                    <li className='py-3 text-slate-500 text-sm font-semibold'>SignIn</li>
+                    <li
+                     className={` cursor-pointer py-3 text-slate-500 text-sm font-semibold border-b-[3px]  border-b-transparent ${matchroute('/') && 'text-black border-b-red-600'}`
+                    }
+                     onClick={()=>navigate('/')}
+                     
+
+                     >
+                        Home
+                     </li>
+                    <li
+                     className={` cursor-pointer py-3 text-slate-500 text-sm font-semibold border-b-[3px] border-b-transparent ${matchroute('/Offers') && 'text-black border-b-red-600'}`}
+                     onClick={()=>navigate('/Offers')}
+                     
+
+                     >
+                        Offers
+                     </li><li
+                     className={`cursor-pointer py-3 text-slate-500 text-sm font-semibold border-b-[3px] border-b-transparent ${matchroute('/Signin') && 'text-black border-b-red-600'}`}
+                     onClick={()=>navigate('/Signin')}
+                     
+
+                     >
+                        Signin
+                     </li>
+                    
                 </ul>
             </div>
         </header>
