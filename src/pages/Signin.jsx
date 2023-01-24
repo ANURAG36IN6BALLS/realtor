@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import {AiFillEyeInvisible,AiFillEye} from 'react-icons/ai'
+import { FcGoogle } from 'react-icons/fc'
 import { Link } from 'react-router-dom'
+import Button from '../components/Button'
 
 export default function Signin() {
       const [showpassword,setshowpassword]=useState(false)
@@ -22,7 +24,7 @@ export default function Signin() {
 
               <input 
               type="text" 
-              className='w-full rounded-lg px-4 py-2  my-7 border-4 focus:border-blue-500 focus:outline-none  '
+              className='w-full rounded-lg px-4 py-2  my-2 border-4 focus:border-blue-500 focus:outline-none  '
               
               placeholder='E-mail Address'
               />
@@ -49,15 +51,15 @@ export default function Signin() {
               </div>
               <div className='flex justify-between'>
                 <p className='text-sm'>Don't Have An Account? <Link to="/Signup" className='font-bold text-red-500'>Register</Link></p>
-                <p className='text-blue-500'>forgot password?</p>
+                <Link to="/Forgotpassword" className='text-blue-500'>forgot password?</Link>
               </div>
 
-              <button className='uppercase w-full bg-blue-600 py-3 my-4 rounded-[8px] text-white font-extralight '>Sign In</button>
+              <Button title="SIGN IN"  back={'bg-blue-600'}/>
+              
               <div className='flex  items-center  before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
                 <p className='mx-3 font-bold text-sm'>OR</p>
               </div>
-              <button className='uppercase w-full bg-red-600 py-3 my-4 rounded-[8px] text-white font-bold'>Continue With Goggle</button>
-
+              <Button title="Continue With Google" pic={FcGoogle} back={'bg-red-600'}/>
           </form>
         </div>
       </div>
