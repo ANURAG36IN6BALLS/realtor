@@ -22,7 +22,7 @@ export default function Header() {
 
 
                 <img src="https://static.rdc.moveaws.com/images/logos/rdc-logo-default.svg" alt="Realter logo" className='h-5 cursor-pointer'
-                onclick={()=>navigate('/')}
+                onClick={()=>navigate('/')}
                 />
 
             </div>
