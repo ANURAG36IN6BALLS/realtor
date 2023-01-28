@@ -3,11 +3,36 @@ import { useState } from 'react'
 import {AiFillEyeInvisible,AiFillEye} from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import Button from '../components/Button'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom'
+import { async } from '@firebase/util'
 
 
 export default function Signin() {
+
+      const navigate=useNavigate()
       const [showpassword,setshowpassword]=useState(false)
+      const [email,setemail]=useState('')
+      const [password,setpassword]=useState('')
+
+       async function onSubmit (e) {
+        e.preventDefault()
+        try {
+          const auth = getAuth();
+          const userCredentials= await signInWithEmailAndPassword(auth, email, password)
+          const user=userCredentials.user
+          console.log(user)
+          toast.success("login successful")
+          navigate('/')
+
+          
+        } catch (error) {
+          toast.error("Something went wrong")
+          
+        }
+      }
   return (
     <section>
       <h1 className=' font-bold text-center py-10 text-[2rem]'>Sign In</h1>
@@ -21,13 +46,14 @@ export default function Signin() {
         </div>
         <div className='w-full md:w-[67%] lg:w-[40%] lg:ml-10'>
     
-          <form action="">
+          <form onSubmit={onSubmit}>
 
               <input 
               type="text" 
               className='w-full rounded-lg px-4 py-2  my-2 border-4 focus:border-blue-500 focus:outline-none  '
               
               placeholder='E-mail Address'
+              onChange={(e)=>setemail(e.target.value)}
               />
              <div className=' my-6 relative'>
 
@@ -35,6 +61,7 @@ export default function Signin() {
                     type={showpassword?"text":"password"} 
                     className='  w-full rounded-lg px-4 py-2  border-4 focus:border-blue-500 focus:outline-none '
                     placeholder='password'
+                    onChange={(e)=>setpassword(e.target.value)}
                     />
                     {
                       showpassword?(
@@ -60,7 +87,7 @@ export default function Signin() {
               <div className='flex  items-center  before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
                 <p className='mx-3 font-bold text-sm'>OR</p>
               </div>
-              <Button title="Continue With Google" pic={FcGoogle} back={'bg-red-600'}/>
+              <Button type='button' click={true} title="Continue With Google" pic={FcGoogle} back={'bg-red-600'}/>
           </form>
         </div>
       </div>

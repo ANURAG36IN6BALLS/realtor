@@ -1,9 +1,31 @@
 import React from 'react'
+import { useState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import Button from '../components/Button'
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { async } from '@firebase/util'  
+import { type } from '@testing-library/user-event/dist/type'
+
+
 
 export default function Forgotpassword() {
+  const [email,setemail]=useState('')
+  
+  async function onSubmit(e){
+    e.preventDefault()
+    try {
+      const auth = getAuth();
+      await sendPasswordResetEmail(auth, email)
+      toast.success('you got a mail on junk')
+      
+    } catch (error) {
+
+      toast.error("invalid email")
+      
+    }
+  }
   return (
     <section>
       <h1 className=' font-bold text-center py-10 text-[2rem]'>Forgot Password</h1>
@@ -17,14 +39,16 @@ export default function Forgotpassword() {
         </div>
         <div className='w-full md:w-[67%] lg:w-[40%] lg:ml-10'>
     
-          <form action="">
+          <form onSubmit={onSubmit}>
 
               <input 
               type="text" 
               className='w-full rounded-lg px-4 py-2  my-2 border-4 focus:border-blue-500 focus:outline-none  '
               
               placeholder='E-mail Address'
-              />
+              onChange={(e)=>setemail(e.target.value)}
+
+/>
               <div className='flex justify-between'>
                 <p className='text-sm'>Already Have An Account? <Link to="/Signin" className='font-bold text-red-500'>Login</Link></p>
               </div>
@@ -34,7 +58,7 @@ export default function Forgotpassword() {
               <div className='flex  items-center  before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
                 <p className='mx-3 font-bold text-sm'>OR</p>
               </div>
-              <Button title="Continue With Google" pic={FcGoogle} back={'bg-red-600'}/>
+              <Button type='button' click={true} title="Continue With Google" pic={FcGoogle} back={'bg-red-600'}/>
           </form>
         </div>
       </div>

@@ -16,18 +16,14 @@ export default function Signup() {
      const [name,setname]=useState('')
      const [email,setemail]=useState('')
      const [password,setpassword]=useState('')
+     
+     
 
 
 
      async function onSubmit(e){
       e.preventDefault()
       try {   
-
-
-            
-
-            
-        
               const auth = getAuth();
               if (name===''){
                 throw {code:'auth/no-name'}
@@ -132,7 +128,7 @@ export default function Signup() {
               <div className='flex  items-center  before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
                 <p className='mx-3 font-bold text-sm'>OR</p>
               </div>
-              <Button title="Continue With Google" pic={FcGoogle} back={'bg-red-600'}/>
+              <Button type='button' click={true} title="Continue With Google" pic={FcGoogle} back={'bg-red-600'}/>
           </form>
         </div>
       </div>
