@@ -82,7 +82,7 @@ export default function Signin() {
                 <Link to="/Forgotpassword" className='text-blue-500'>forgot password?</Link>
               </div>
 
-              <Button title="SIGN IN"  back={'bg-blue-600'}/>
+              <Button title="sign in"  back={'bg-blue-600'}/>
               
               <div className='flex  items-center  before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
                 <p className='mx-3 font-bold text-sm'>OR</p>

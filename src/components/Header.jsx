@@ -1,11 +1,35 @@
-import React from 'react'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import { useLocation,useNavigate } from 'react-router'
 
 
 
 export default function Header() {
+
+    const auth = getAuth()
+
     const location = useLocation()
     const navigate = useNavigate()
+    const [title,settitle]=useState("SignIn")
+
+
+
+      useEffect(()=>{
+        const auth =getAuth()
+        onAuthStateChanged(auth ,(user)=>{
+
+            if(user){
+            settitle("Profile")
+            }
+            else {
+                settitle("SignIn")
+            }
+
+        })
+        
+    },[auth])
+  
 
    function matchroute(route){
     if ( route===location.pathname){
@@ -45,12 +69,12 @@ export default function Header() {
                      >
                         Offers
                      </li><li
-                     className={`cursor-pointer py-3 text-slate-500 text-sm font-semibold border-b-[3px] border-b-transparent ${matchroute('/Signin') && 'text-black border-b-red-600'}`}
-                     onClick={()=>navigate('/Signin')}
+                     className={`cursor-pointer py-3 text-slate-500 text-sm font-semibold border-b-[3px] border-b-transparent ${matchroute('/Signin') || matchroute('/Profile') && 'text-black border-b-red-600'}`}
+                     onClick={()=>navigate('/Profile')}
                      
 
                      >
-                        Signin
+                        {title}
                      </li>
                     
                 </ul>
