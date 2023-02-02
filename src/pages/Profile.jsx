@@ -2,10 +2,12 @@ import { getAuth, updateProfile } from 'firebase/auth'
 import { doc, updateDoc } from 'firebase/firestore'
 import React from 'react'
 import { useState } from 'react'
+import { FcHome } from 'react-icons/fc'
 import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 import Button from '../components/Button'
 import { db } from '../Firebase'
+import { Link } from 'react-router-dom'
 
 
 export default function Profile() {
@@ -48,7 +50,7 @@ export default function Profile() {
         <h1 className='font-bold text-[1.5rem] mt-6'>My Profile</h1>
         <div className='text-[1.2rem]'>
             <form>
-                <input type="text" value={name} onChange={onChange} disabled={!edit} className={`w-full border-[2px] border-gray-600 mb-6 mt-6  h-9 text-center hover:border-black transition duration-300 ease-in-out cursor-pointer  ${edit && 'bg-red-500'}`} />
+                <input type="text" value={name} onChange={onChange} disabled={!edit} className={`w-full border-[2px] border-gray-600 mb-6 mt-6  h-9 text-center hover:border-black transition duration-300 ease-in-out cursor-pointer  ${edit && 'bg-red-200 focus:bg-red-400'}`} />
                 <input type="email" value={email} disabled className='w-full border-[2px] border-gray-600 mb-6 h-9 text-center hover:border-black transition duration-300 ease-in-out cursor-pointer rounded' />
                 
             </form>
@@ -64,7 +66,12 @@ export default function Profile() {
                 </p>
                 <p onClick={SignOut}  className='text-blue-700 cursor-pointer'>Signout</p>
             </div>
-            <Button title={'SignIn'} back={'bg-blue-800'}/>
+
+                
+            <Link to="/CreateListing">
+             <Button type='button'  title="Sell And Rent" pic={FcHome} back={'bg-blue-600 round'}/>
+
+            </Link>
         </div>
     </div>
     

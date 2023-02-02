@@ -87,7 +87,7 @@ export default function Signin() {
               <div className='flex  items-center  before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
                 <p className='mx-3 font-bold text-sm'>OR</p>
               </div>
-              <Button type='button' click={true} title="Continue With Google" pic={FcGoogle} back={'bg-red-600'}/>
+              <Button type='button' click={true} title="Continue With Google" pic='FcGoogle' back={'bg-red-600'}/>
           </form>
         </div>
       </div>
