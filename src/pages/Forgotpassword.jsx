@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Button from '../components/Button'
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+
 import { async } from '@firebase/util'  
 import { type } from '@testing-library/user-event/dist/type'
 
@@ -49,16 +50,17 @@ export default function Forgotpassword() {
               onChange={(e)=>setemail(e.target.value)}
 
 />
-              <div className='flex justify-between'>
-                <p className='text-sm'>Already Have An Account? <Link to="/Signin" className='font-bold text-red-500'>Login</Link></p>
+              <div className='flex justify-between mb-4' >
+                <p className='text-sm'>Already Have An Account? <Link to="/Signup" className='font-bold text-red-500'>Register</Link></p>
+                <p><Link to="/Signin" className='text-blue-600 font-bold font-sm'> SignIn instead</Link></p>
               </div>
 
               <Button title="Reset password"  back={'bg-blue-600'}/>
               
-              <div className='flex  items-center  before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
+              <div className='flex  items-center my-4 before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
                 <p className='mx-3 font-bold text-sm'>OR</p>
               </div>
-              <Button type='button' click={true} title="Continue With Google" pic={FcGoogle} back={'bg-red-600'}/>
+              <Button type='button' click={true} title="Continue With Google" pic="FcGoogle" back={'bg-red-600'}/>
           </form>
         </div>
       </div>

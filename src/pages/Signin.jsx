@@ -7,6 +7,9 @@ import { toast } from 'react-toastify'
 import Button from '../components/Button'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom'
+import {  signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { setDoc,getDoc ,doc ,serverTimestamp, Timestamp  } from 'firebase/firestore';
+import { db } from '../Firebase';
 import { async } from '@firebase/util'
 
 
@@ -33,6 +36,40 @@ export default function Signin() {
           
         }
       }
+
+   
+   
+    async function Authentication(){
+    console.log("hello")
+    try {
+      const auth = getAuth();
+      const provider = new GoogleAuthProvider();
+      const userCredentials = await signInWithPopup(auth, provider)
+      const user =userCredentials.user
+      console.log(user)
+
+      const docSnap= await getDoc(doc(db,"users",user.uid ))
+      if (!docSnap.exists()){
+       await setDoc(doc(db,"users",user.uid ),{
+        'email':user.email,
+        'name':user.displayName,
+        'timestamp':serverTimestamp()}
+        )
+      }
+      navigate('/')
+
+
+      toast.success("That's the spirit")
+      
+    } catch (error) {
+      toast.error("getting trouble in login")
+      
+    }
+  }
+
+
+
+  
   return (
     <section>
       <h1 className=' font-bold text-center py-10 text-[2rem]'>Sign In</h1>
@@ -77,17 +114,17 @@ export default function Signin() {
                       
                     }
               </div>
-              <div className='flex justify-between'>
+              <div className='flex justify-between mb-4'>
                 <p className='text-sm'>Don't Have An Account? <Link to="/Signup" className='font-bold text-red-500'>Register</Link></p>
                 <Link to="/Forgotpassword" className='text-blue-500'>forgot password?</Link>
               </div>
 
               <Button title="sign in"  back={'bg-blue-600'}/>
               
-              <div className='flex  items-center  before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
+              <div className='flex  items-center my-4 before:border-t before:flex-1 before:border-gray-300  after:border-t after:flex-1 after:border-gray-300'>
                 <p className='mx-3 font-bold text-sm'>OR</p>
               </div>
-              <Button type='button' click={true} title="Continue With Google" pic='FcGoogle' back={'bg-red-600'}/>
+              <Button type='button' onClick={Authentication} title="Continue With Google" pic='FcGoogle' back={'bg-red-600'}/>
           </form>
         </div>
       </div>

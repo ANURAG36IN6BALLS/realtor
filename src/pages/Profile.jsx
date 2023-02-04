@@ -54,7 +54,7 @@ export default function Profile() {
                 <input type="email" value={email} disabled className='w-full border-[2px] border-gray-600 mb-6 h-9 text-center hover:border-black transition duration-300 ease-in-out cursor-pointer rounded' />
                 
             </form>
-            <div className='flex justify-between'>
+            <div className='flex justify-between mb-4   '>
                 <p>Do want to Rename the text ?
                     <span onClick={()=>{
                         edit && onSubmit()
