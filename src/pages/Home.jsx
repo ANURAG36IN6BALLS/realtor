@@ -3,13 +3,240 @@ import cs1 from  '../components/assets/regular-images/cs1.jpeg'
 
 export default function Home() {
   return (
-    <div>
-      <div>
-          <h1>Enginnering Couses</h1>
-          <div>
-            <img src={cs1} alt="cs1 image" />
+
+    <section> 
+
+
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
           </div>
-      </div>
-    </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+        <div className='flex justify-center items-center space-x-2 justify-'>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+          <div className='w-[30%] h-[30%]'>
+              <span>Enginnering Couses</span>
+              <div >
+                <img src={cs1} alt="cs1 image" className='h-full w-full ' />
+              </div>
+          </div>
+        </div>
+
+
+        {/* ================footer=========================================== */}
+
+
+
+        <div className='mb-5'>
+
+        </div>
+
+    </section>
   )
 }

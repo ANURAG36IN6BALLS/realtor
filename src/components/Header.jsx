@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useLocation,useNavigate } from 'react-router'
 
 
-
+ 
 export default function Header() {
 
     const auth = getAuth()
@@ -68,7 +68,8 @@ export default function Header() {
 
                      >
                         Offers
-                     </li><li
+                     </li>
+                     <li
                      className={`cursor-pointer py-3 text-slate-500 text-sm font-semibold border-b-[3px] border-b-transparent ${matchroute('/Signin') || matchroute('/Profile') && 'text-black border-b-red-600'}`}
                      onClick={()=>navigate('/Profile')}
                      
